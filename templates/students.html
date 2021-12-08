@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<ul>
+    {% for student in students %}
+        <li>
+            <a href="{% url 'get-students' student_id=student.id %}">
+                ID: {{student.id }} <br>
+                <strong>{{ student.name }} </strong> <br>
+                Grade: {{ student.average_grade }}
+            </a>
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}
